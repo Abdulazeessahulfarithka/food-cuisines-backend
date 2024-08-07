@@ -1,32 +1,32 @@
 import indianCuisine from "../model/indianCuisine.js";
 
-export const recipe =async (req,res)=>{
+export const receipe =async (req,res)=>{
 try{
-const {name,ingredients,directions,chefNote}=req.body;
+const {name}=req.body;
 if(!name){
     return res.status(400).send({ message: "name is requird" });
 }
-if(!ingredients){
-    return res.status(400).send({ message: "ingredients is requird" });
-}
-if(!directions){
-    return res.status(400).send({ message: "directions is requird" });
-}
-if(!chefNote){
-    return res.status(400).send({ message: "chefNote is requird" });
-}
- const recipe= await new indianCuisine({name,ingredients,directions,chefNote}).save()
+// if(!ingredients){
+//     return res.status(400).send({ message: "ingredients is requird" });
+// }
+// if(!directions){
+//     return res.status(400).send({ message: "directions is requird" });
+// }
+// if(!chefNote){
+//     return res.status(400).send({ message: "chefNote is requird" });
+// }
+ const receipe= await new indianCuisine({name}).save()
  return res.status(500).send({
     success: true,
     message: "Name created successfully",
-    recipe,
+    receipe,
   });
 
 }catch(error){
     console.log("error")
 }
 }
-export const recipeGet=async(req,res)=>{
+export const allReceipe=async(req,res)=>{
 try{
     const recipe=await indianCuisine.find({})
     res.status(200).send({

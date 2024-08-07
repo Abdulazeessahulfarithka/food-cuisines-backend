@@ -1,7 +1,7 @@
 import express from "express";
-import {recipe,recipeGet} from "../controllers/indianCuisine.js"
+import {receipe,allReceipe} from "../controllers/indianCuisine.js"
 const router=express.Router()
 
-router.post("/recipe",recipe)
-router.get("/recipeget",recipeGet)
+router.post("/receipe",receipe)
+router.get("/allreceipe",allReceipe)
 export default router;

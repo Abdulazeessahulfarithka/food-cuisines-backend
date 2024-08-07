@@ -1,23 +1,34 @@
-import express from "express";
-import * as dotenv from "dotenv";
-import db from "./conFig/db.js"
-import indianCuisine from "./routes/indianCusine.js";
+import express from 'express';
+import * as dotenv from 'dotenv';
+import cors from 'cors';
+import db from './conFig/db.js';
+import indianCuisine from './routes/indianCusine.js';
 
-dotenv.config()
-const app=express();
-//database connection
-db()
+dotenv.config();
 
-//PORT
-const PORT=process.env.PORT
+const app = express();
 
-//middlewares
+// Database connection
+db();
+
+// PORT
+const PORT = process.env.PORT || 5000; // Default to 5000 if PORT is not defined
+
+// Middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(cors({
+    origin: 'http://localhost:3000', // Allow requests from your frontend
+  }));
 
-app.get("/",(req,res)=>{
-    res.send("hello world")
-})
+// Routes
+app.get('/', (req, res) => {
+  res.send('Hello World');
+});
 
-app.use("/api/cateogry",indianCuisine)
-app.listen(PORT,()=> console.log(`server is connected ${PORT}`))
+app.use('/api/category', indianCuisine); // Corrected the endpoint path
+
+// Start server
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});

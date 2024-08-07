@@ -26,3 +26,20 @@ if(!chefNote){
     console.log("error")
 }
 }
+export const recipeGet=async(req,res)=>{
+try{
+    const recipe=await indianCuisine.find({})
+    res.status(200).send({
+        success: true,
+        message: "All Categories List",
+        recipe,
+      });
+    } catch (error) {
+      console.log(error);
+      res.status(500).send({
+        success: false,
+        error,
+        message: "Error while getting all categories",
+      });
+    }
+  };

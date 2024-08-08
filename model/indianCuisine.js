@@ -18,7 +18,7 @@ const indianCuisineSchema = new mongoose.Schema({
     required: true,
   },
   instructions: {
-    type: [String], // Assuming instructions field based on previous discussion
+    type: [String], 
     required: true,
   },
   photo1: {

@@ -10,15 +10,15 @@ const indianCuisineSchema = new mongoose.Schema({
     required: true,
   },
   description: {
-    type: String,
+    type: [String],
     required: true,
   },
   ingredients: {
-    type: String,
+    type: [String],
     required: true,
   },
   instructions: {
-    type: String, 
+    type: [String], 
     required: true,
   },
   photo1: {
@@ -26,7 +26,7 @@ const indianCuisineSchema = new mongoose.Schema({
     required: true,
   },
   benefits: {
-    type: String,
+    type: [String],
     required: true,
   },
 }, { timestamps: true });

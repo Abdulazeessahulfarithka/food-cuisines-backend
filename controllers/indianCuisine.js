@@ -2,7 +2,7 @@ import indianCuisine from "../model/indianCuisine.js";
 
 export const createRecipe = async (req, res) => {
   try {
-    const { name, photo, description,instructions, ingredients, photo1, benefits } = req.body;
+    const { name, photo,description,instructions,ingredients,photo1,benefits} = req.body;
 
     // Validate required fields
     if (!name) return res.status(400).send({ message: "Name is required" });
@@ -14,7 +14,7 @@ export const createRecipe = async (req, res) => {
     if (!benefits) return res.status(400).send({ message: "Benefits are required" });
 
     // Create and save the recipe
-    const recipe = new indianCuisine({ name, photo, description,instructions, ingredients, photo1, benefits });
+    const recipe = new indianCuisine({ name, photo,description,instructions,ingredients,photo1,benefits});
     await recipe.save();
 
     return res.status(201).send({

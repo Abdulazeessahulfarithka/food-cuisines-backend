@@ -5,6 +5,7 @@ import db from './conFig/db.js';
 import indianCuisine from './routes/indianCusine.js';
 import latestRecipe from './routes/latestRecipe.js';
 import ramdanIftar from './routes/ramdaniftar.js'; // Corrected import
+const allowedOrigins = ['http://localhost:3000', 'https://teal-rolypoly-c77c1c.netlify.app'];
 
 dotenv.config();
 
@@ -19,7 +20,15 @@ const PORT = process.env.PORT || 5000;
 // Middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cors());
+app.use(cors({
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    }
+  }));
 
 // Routes
 app.get('/', (req, res) => {

@@ -22,7 +22,7 @@ const indianCuisineSchema = new mongoose.Schema({
     required: true,
   },
   photo1: {
-    type: String,
+    type: [String],
     required: true,
   },
   benefits: {

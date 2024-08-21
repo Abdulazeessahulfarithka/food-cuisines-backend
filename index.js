@@ -7,7 +7,7 @@ import latestRecipe from './routes/latestRecipe.js';
 import ramdanIftar from './routes/ramdaniftar.js'; // Corrected import
 import lunchRecipe from './routes/lunchRecipe.js';
 import dinnerRecipe from './routes/dinnerRecipe.js';
-const allowedOrigins = ['http://localhost:3000', 'https://cuisinelist.netlify.app/'];
+const allowedOrigins = ['http://localhost:3000', 'https://cuisinelist.netlify.app'];
 
 dotenv.config();
 
@@ -41,7 +41,7 @@ app.use('/api/category', indianCuisine);
 app.use('/api/latest', latestRecipe);
 app.use('/api/ramdan', ramdanIftar); 
 app.use('/api/lunch',lunchRecipe)
-app.use('/api/dinner',dinnerRecipe)
+app.use('api/dinner',dinnerRecipe)
 // Start server
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);

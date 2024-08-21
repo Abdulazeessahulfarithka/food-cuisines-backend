@@ -5,6 +5,8 @@ import db from './conFig/db.js';
 import indianCuisine from './routes/indianCusine.js';
 import latestRecipe from './routes/latestRecipe.js';
 import ramdanIftar from './routes/ramdaniftar.js'; // Corrected import
+import lunchRecipe from './routes/lunchRecipe.js';
+import dinnerRecipe from './routes/dinnerRecipe.js';
 const allowedOrigins = ['http://localhost:3000', 'https://teal-rolypoly-c77c1c.netlify.app'];
 
 dotenv.config();
@@ -37,8 +39,9 @@ app.get('/', (req, res) => {
 
 app.use('/api/category', indianCuisine);
 app.use('/api/latest', latestRecipe);
-app.use('/api/ramdan', ramdanIftar); // Corrected usage
-
+app.use('/api/ramdan', ramdanIftar); 
+app.use('/api/lunch',lunchRecipe)
+app.use('/api/dinner',dinnerRecipe)
 // Start server
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);

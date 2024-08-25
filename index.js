@@ -7,7 +7,7 @@ import latestRecipe from './routes/latestRecipe.js';
 import ramdanIftar from './routes/ramdaniftar.js'; // Corrected import
 import lunchRecipe from './routes/lunchRecipe.js';
 import dinnerRecipe from './routes/dinnerRecipe.js';
-const allowedOrigins = ['http://localhost:3000', 'https://cuisinelist.netlify.app'];
+const allowedOrigins = ['http://localhost:3000', 'https://allcuisines.netlify.app/'];
 
 dotenv.config();
 

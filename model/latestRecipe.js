@@ -11,15 +11,15 @@ const latestReceipe =new mongoose.Schema({
              required:true,
           },
           description:{
-            type:String,
+            type:[String],
             required:true,
           },
          ingrediants:{
-          type:String,
+          type:[String],
           required:true
          },
          instructions:{
-           type:String,Number,
+           type:[String],Number,
            required:true,
          },
          photo1:{
@@ -27,7 +27,7 @@ const latestReceipe =new mongoose.Schema({
             required:true,
          },
           benefits:{
-            type:String,
+            type:[String],
             required:true,
           },
 

@@ -4,7 +4,7 @@ import cors from 'cors';
 import db from './conFig/db.js';
 import indianCuisine from './routes/indianCusine.js';
 import latestRecipe from './routes/latestRecipe.js';
-import ramdanIftar from './routes/ramdaniftar.js'; // Corrected import
+import ramdanIftar from './routes/ramdaniftar.js';
 import lunchRecipe from './routes/lunchRecipe.js';
 import dinnerRecipe from './routes/dinnerRecipe.js';
 const allowedOrigins = ['http://localhost:3000', 'https://cuisinelist.netlify.app'];

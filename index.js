@@ -41,8 +41,8 @@ app.use('/api/category', indianCuisine);
 app.use('/api/latest', latestRecipe);
 app.use('/api/ramdan', ramdanIftar); 
 app.use('/api/lunch',lunchRecipe)
-app.use('api/dinner',dinnerRecipe)
-// Start server
+app.use('/api/dinner',dinnerRecipe)
+// Start /server
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
